@@ -80,7 +80,10 @@
         <p>🕒 Open now<br>8:00 AM - 10:00 PM</p>
         <p>📍 Address<br>1675 Broadway Broadway & 52nd Street, New York City, NY 10019–5820</p>
         <p>🏆 More than 148+ lives saved</p>
-        <button class="donor-button">Became a blood donor</button>
+        <button class="donor-button" on:click={() => {
+                location.href = "/clinic/appointment";
+
+    }}>Became a blood donor</button>
     </div>
 
     <div class="section-title">Available blood checks</div>
@@ -99,5 +102,8 @@
         <!-- Additional reviews would go here -->
     </div>
 
-    <button class="donor-button">Became a blood donor</button>
+    <button class="donor-button" on:click={() => {
+                location.href = "/clinic/appointment";
+
+    }}>Became a blood donor</button>
 </div>

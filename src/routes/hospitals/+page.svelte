@@ -42,6 +42,7 @@
                 .addTo(map);
 
             el.addEventListener('click', () => {
+                location.href = "/clinic";
                 marker.togglePopup();
             });
         }

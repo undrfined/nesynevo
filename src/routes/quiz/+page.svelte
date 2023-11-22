@@ -18,15 +18,42 @@
             question: "Have you had a blood or blood product transfusion since 1 January 1980?",
             isYesOk: true
         },
-    ]
+    ];
+    function fail() {
+        location.href = "/quiz/fail";
+    }
+    let currentQuestionIndex = 0;
+    function t() {
+        if(currentQuestionIndex === questions.length - 1) {
+            // go to the next page
+            location.href = "/quiz/success";
+        } else {
+            currentQuestionIndex++
+        }
+    }
+    $: currentQuestion = questions[currentQuestionIndex];
 </script>
 
 <div class="quiz">
 
-    <div class="block">
-        <h1 class="header">Are you 16 - 65 years old?</h1>
-        <button class="main-btn">Yes</button>
-        <button class="main-btn selected">No</button>
+    <div class="blocks">
+            <div class="block">
+                <div class="header">{currentQuestion.question}</div>
+                <div class="main-btn" on:click={() => {
+                    if(!currentQuestion.isYesOk) {
+                        fail();
+                        return;
+                    }
+                    t();
+                }}>Yes</div>
+                <div class="main-btn" on:click={() => {
+                     if(currentQuestion.isYesOk) {
+                        fail();
+                        return;
+                    }
+                    t();
+                }}>No</div>
+            </div>
     </div>
     <div class="nav">
 
@@ -103,7 +130,7 @@
     line-height: 20px; /* 200% */
     text-transform: uppercase;
 
-    &.selected {
+    &:hover, &:active {
       color: #ffffff;
       background: #121212;
     }

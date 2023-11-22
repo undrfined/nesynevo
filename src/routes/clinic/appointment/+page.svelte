@@ -129,6 +129,9 @@
         Please note that blood checks are only available on an empty stomach, so if you prefer to proceed with blood donation only, please cancel your check before your appointment.
     </div>
 
-    <button class="confirm-button">Confirm & Next</button>
+    <button class="confirm-button" on:click={() => {
+                location.href = "/clinic/appointment/success";
+
+    }}>Confirm & Next</button>
 </div>
 

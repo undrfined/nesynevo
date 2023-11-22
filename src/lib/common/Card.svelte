@@ -10,7 +10,9 @@
 
 </script>
 
-<div class="card">
+<div class="card" on:click={() => {
+    location.href = "/clinic";
+}}>
     <div class="header">
         <div class="header-icon">
             <img src={icons[icon]} class="icon">

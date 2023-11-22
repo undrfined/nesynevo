@@ -3,6 +3,10 @@
     import googleIcon from "$lib/assets/google.svg";
     import emailIcon from "$lib/assets/mail.svg";
     import appleIcon from "$lib/assets/apple.svg";
+
+    function login(){
+        location.href = "/";
+    }
 </script>
 
 <style>
@@ -66,19 +70,19 @@
         <h1>Happy you joined us!</h1>
         <p>Join the Fight Against Blood Shortages and Save Lives in Your Community</p>
     </div>
-    <button class="auth-button">
+    <button class="auth-button" on:click={login}>
         <img src={emailIcon} alt="Email icon">Continue With Email
     </button>
-    <button class="auth-button">
+    <button class="auth-button" on:click={login}>
         <img src={facebookIcon} alt="Facebook icon">Continue With Facebook
     </button>
-    <button class="auth-button">
+    <button class="auth-button" on:click={login}>
         <img src={googleIcon} alt="Google icon">Continue With Google
     </button>
-    <button class="auth-button">
+    <button class="auth-button" on:click={login}>
         <img src={appleIcon} alt="Apple icon">Continue With Apple
     </button>
-    <button class="auth-button">Sign In</button>
+    <button class="auth-button" on:click={login}>Sign In</button>
     <p class="terms">
         By signing in, you agree to our Terms of Service and acknowledge that you have read our Privacy Policy.
     </p>

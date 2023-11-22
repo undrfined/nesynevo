@@ -24,6 +24,10 @@
 {/if}
 
 <style>
+	.page {
+		height: 100dvh;
+		margin-bottom: 200px;
+	}
 	.header {
 		display: flex;
 		flex-direction: row;
