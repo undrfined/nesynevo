@@ -5,19 +5,23 @@
 	import {page} from "$app/stores";
 </script>
 
-<main class="page">
-	{#if !$page.url.pathname.startsWith('/user')}
-		<div class="header">
-			<span class="location">Lviv, Ukraine</span>
-
-			<img src={iconNotification} alt="" class="icon-notification">
-		</div>
-	{/if}
-
+{#if $page.url.pathname.startsWith('/quiz')}
 	<slot/>
+{:else}
+	<main class="page">
+		{#if !$page.url.pathname.startsWith('/user')}
+			<div class="header">
+				<span class="location">Lviv, Ukraine</span>
 
-	<Navbar/>
-</main>
+				<img src={iconNotification} alt="" class="icon-notification">
+			</div>
+		{/if}
+
+		<slot/>
+
+		<Navbar/>
+	</main>
+{/if}
 
 <style>
 	.header {
